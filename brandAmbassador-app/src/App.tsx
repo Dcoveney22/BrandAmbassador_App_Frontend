@@ -3,12 +3,16 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+// export async function getProducts() {
+
 async function App() {
   const [count, setCount] = useState(0);
-  const response = await fetch("http://localhost:3000/");
-  const data = await response.json();
-  console.log(data);
+  const response = await fetch("http://localhost:3000/stockSheet");
+  const productData = await response.json();
+  // return productData;
 
+  const arrayDataItems = productData.map((product: any) => <li>{product}</li>);
+  // return arrayDataItems;
   return (
     <>
       <div>
@@ -20,6 +24,10 @@ async function App() {
         </a>
       </div>
       <h1>Hello World</h1>
+      <div>
+        <ul>{arrayDataItems}</ul>
+      </div>
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
