@@ -1,9 +1,28 @@
 import { getProducts } from "../Functions/backEndFunction";
 
-function ProductList() {
-  const data = getProducts();
-  // const arrayDataItems = data.map((product: any) => <li>{product}</li>);
-  console.log(data);
-  return <ul>{data}</ul>;
+type BrandSKU = {
+  Brand: string;
+  SKU: string;
+  CL: number;
+  ABV: number;
+  Ex_Works: number;
+  Wholesale: number;
+  On_Trade: number;
+  RRP: number;
+};
+async function ProductList() {
+  const importArray: BrandSKU[] = await getProducts();
+  const arrayDataItems = importArray.map((product: BrandSKU) => (
+    <li>
+      {product.SKU} {product.Brand}
+    </li>
+  ));
+  console.log(importArray);
+
+  return (
+    <div>
+      <ol>{arrayDataItems}</ol>
+    </div>
+  );
 }
-export default ProductList;
+export default ProductList();
