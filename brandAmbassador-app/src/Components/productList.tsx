@@ -26,7 +26,7 @@ function ProductList() {
       <ol>
         {data.map((product: BrandSKU) => (
           <li>
-            {product.SKU} {product.Brand}
+            {product.Brand} || {product.SKU}
           </li>
         ))}
       </ol>
