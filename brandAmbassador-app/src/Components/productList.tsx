@@ -1,28 +1,36 @@
-import { getProducts } from "../Functions/backEndFunction";
+import { useQuery } from '@tanstack/react-query';
+import { getProducts } from '../Functions/backEndFunction';
 
 type BrandSKU = {
-  Brand: string;
-  SKU: string;
-  CL: number;
-  ABV: number;
-  Ex_Works: number;
-  Wholesale: number;
-  On_Trade: number;
-  RRP: number;
+	Brand: string;
+	SKU: string;
+	CL: number;
+	ABV: number;
+	Ex_Works: number;
+	Wholesale: number;
+	On_Trade: number;
+	RRP: number;
 };
-async function ProductList() {
-  const importArray: BrandSKU[] = await getProducts();
-  const arrayDataItems = importArray.map((product: BrandSKU) => (
-    <li>
-      {product.SKU} {product.Brand}
-    </li>
-  ));
-  console.log(importArray);
+function ProductList() {
+	const { data, isLoading } = useQuery({
+		queryKey: [`products`],
+		queryFn: getProducts,
+	});
 
-  return (
-    <div>
-      <ol>{arrayDataItems}</ol>
-    </div>
-  );
+	if (isLoading) return <div>Loading...</div>;
+
+	console.log(data);
+
+	return (
+		<div>
+			<ol>
+				{data.map((product: BrandSKU) => (
+					<li>
+						{product.SKU} {product.Brand}
+					</li>
+				))}
+			</ol>
+		</div>
+	);
 }
-export default ProductList();
+export default ProductList;
