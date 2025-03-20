@@ -61,7 +61,7 @@ function ProductCard() {
       </div>
     );
   }
-  //   exampleData.forEach((product) => {
+  //   exampleData.map((product) => {
   //     return (
   //       <div>
   //         <img
