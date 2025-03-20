@@ -1,7 +1,7 @@
 import { getProducts } from "../Functions/backEndFunction";
 import { useQuery } from "@tanstack/react-query";
 
-type BrandSKU = {
+export type BrandSKU = {
   Brand: string;
   SKU: string;
   CL: number;
