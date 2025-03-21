@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.separator {
+  height: 5px;
+  background-color: rgba(102, 102, 102, 0.89);
+  border: none;
+}

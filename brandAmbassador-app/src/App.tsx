@@ -10,7 +10,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <ProductList />
-        <ProductCard />
+        {/* <ProductCard /> */}
       </QueryClientProvider>
     </>
   );

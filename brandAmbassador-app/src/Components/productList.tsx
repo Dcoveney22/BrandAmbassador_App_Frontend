@@ -1,5 +1,6 @@
-import { getProducts } from "../Functions/backEndFunction";
+import { getProducts } from "../Functions/getProducts";
 import { useQuery } from "@tanstack/react-query";
+import ProductCard from "./ProductCard";
 
 export type BrandSKU = {
   Brand: string;
@@ -10,6 +11,7 @@ export type BrandSKU = {
   Wholesale: number;
   On_Trade: number;
   RRP: number;
+  Product_Code: string;
 };
 
 function ProductList() {
@@ -23,13 +25,18 @@ function ProductList() {
 
   return (
     <div>
-      <ol>
+      <div>
         {data.map((product: BrandSKU) => (
-          <li>
-            {product.Brand} || {product.SKU}
-          </li>
+          <ProductCard
+            Brand={product.Brand}
+            SKU={product.SKU}
+            Wholesale={product.Wholesale}
+            RRP={product.RRP}
+            On_Trade={product.On_Trade}
+            Product_Code={product.Product_Code}
+          />
         ))}
-      </ol>
+      </div>
     </div>
   );
 }
