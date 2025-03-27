@@ -1,6 +1,8 @@
 import { getMarketing } from "../Functions/getMarketing";
 import { useQuery } from "@tanstack/react-query";
 import MarketingCard from "./MarketingCard";
+import Button from "./Button";
+import { useState } from "react";
 
 export type MarketingBudget = {
   Brand: string;
@@ -27,36 +29,52 @@ function MarketingList() {
     queryKey: [`marketing`],
     queryFn: getMarketing,
   });
+
+  const [viewing, setViewing] = useState(false);
+  const viewMarketing = () => {
+    setViewing(true);
+  };
+  const stopViewing = () => {
+    setViewing(false);
+  };
+
   if (isLoading) return <div>Marketing is Loading...</div>;
 
   console.log(dataM);
 
   return (
     <div>
-      <div>
-        {dataM.map((budget: MarketingBudget) => (
-          <MarketingCard
-            Brand={budget.Brand}
-            Trade_Shows={budget.Trade_Shows}
-            Consumer_Shows={budget.Consumer_Shows}
-            Digital_Marketing={budget.Digital_Marketing}
-            Photography={budget.Photography}
-            PR={budget.PR}
-            Wholesale_Activations={budget.Wholesale_Activations}
-            Retail_Activations={budget.Retail_Activations}
-            Other_Retail_Activations={budget.Other_Retail_Activations}
-            Amazon_Marketing={budget.Amazon_Marketing}
-            POS_Budget={budget.POS_Budget}
-            On_Trade_Activations={budget.On_Trade_Activations}
-            On_Trade_Listing_Fee={budget.On_Trade_Listing_Fee}
-            On_Trade_Staff_Incentives={budget.On_Trade_Staff_Incentives}
-            On_Trade_Entertainment={budget.On_Trade_Entertainment}
-            Incidentals={budget.Incidentals}
-            Total={budget.Total}
-          />
-        ))}
-      </div>
+      {viewing ? (
+        <div>
+          {dataM.map((budget: MarketingBudget) => (
+            <MarketingCard
+              Brand={budget.Brand}
+              Trade_Shows={budget.Trade_Shows}
+              Consumer_Shows={budget.Consumer_Shows}
+              Digital_Marketing={budget.Digital_Marketing}
+              Photography={budget.Photography}
+              PR={budget.PR}
+              Wholesale_Activations={budget.Wholesale_Activations}
+              Retail_Activations={budget.Retail_Activations}
+              Other_Retail_Activations={budget.Other_Retail_Activations}
+              Amazon_Marketing={budget.Amazon_Marketing}
+              POS_Budget={budget.POS_Budget}
+              On_Trade_Activations={budget.On_Trade_Activations}
+              On_Trade_Listing_Fee={budget.On_Trade_Listing_Fee}
+              On_Trade_Staff_Incentives={budget.On_Trade_Staff_Incentives}
+              On_Trade_Entertainment={budget.On_Trade_Entertainment}
+              Incidentals={budget.Incidentals}
+              Total={budget.Total}
+            />
+          ))}
+        </div>
+      ) : (
+        <div>
+          <Button onClick={viewMarketing} text="Get Marketing" />
+        </div>
+      )}
     </div>
   );
 }
+
 export default MarketingList;

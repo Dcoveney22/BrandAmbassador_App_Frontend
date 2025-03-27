@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../App.css";
 import Button from "./Button";
 import ViewMarketingBudget from "./ViewMarketing";
@@ -83,8 +84,10 @@ function MarketingCard({
           <br />
           Totals: £{Total}
         </p>
+
         <hr className="separator" />
       </div>
+
       {/* <ViewMarketingBudget /> */}
     </div>
   );

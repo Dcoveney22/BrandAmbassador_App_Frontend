@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <ViewMarketingBudget />
-        {/* <ProductList /> */}
-        {/* <MarketingList /> */}
+        {/* <ViewMarketingBudget /> */}
+        <ProductList />
+        <MarketingList />
       </QueryClientProvider>
     </>
   );
