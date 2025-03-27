@@ -19,7 +19,7 @@ function ProductList() {
     queryKey: [`products`],
     queryFn: getProducts,
   });
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <div>Price List is Loading...</div>;
 
   console.log(data);
 
