@@ -26,11 +26,10 @@ export type MarketingBudget = {
 };
 
 type MarketingListProps = {
-  setSelectedPage: React.Dispatch<React.SetStateAction<number>>;
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
-function MarketingList({ setSelectedPage, setViewMode }: MarketingListProps) {
+function MarketingList({ setViewMode }: MarketingListProps) {
   const { data: dataM, isLoading } = useQuery({
     queryKey: [`marketing`],
     queryFn: getMarketing,
@@ -76,13 +75,7 @@ function MarketingList({ setSelectedPage, setViewMode }: MarketingListProps) {
         </div>
       )}
       <div>
-        <Button
-          onClick={() => {
-            setSelectedPage(1);
-            setViewMode(ViewMode.MarketingList);
-          }}
-          text="Get Marketing"
-        />
+        <Button onClick={viewMarketing} text="Get Marketing" />
       </div>
     </div>
   );

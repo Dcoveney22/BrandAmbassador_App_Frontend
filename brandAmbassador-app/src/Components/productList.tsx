@@ -4,10 +4,6 @@ import ProductCard from "./ProductCard";
 import Button from "./Button";
 import { useState } from "react";
 import { ViewMode } from "./ParentComponent";
-type ProductListProps = {
-  setSelectedPage: React.Dispatch<React.SetStateAction<number>>;
-  setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
-};
 
 export type BrandSKU = {
   Brand: string;
@@ -20,8 +16,10 @@ export type BrandSKU = {
   RRP: number;
   Product_Code: string;
 };
-
-function ProductList({ setSelectedPage, setViewMode }: ProductListProps) {
+type ProductListProps = {
+  setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
+};
+function ProductList({ setViewMode }: ProductListProps) {
   const { data, isLoading } = useQuery({
     queryKey: [`products`],
     queryFn: getProducts,
@@ -57,7 +55,6 @@ function ProductList({ setSelectedPage, setViewMode }: ProductListProps) {
       <div>
         <Button
           onClick={() => {
-            setSelectedPage(2);
             setViewMode(ViewMode.ProductList);
           }}
           text="Get Price List"

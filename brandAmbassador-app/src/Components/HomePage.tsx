@@ -3,21 +3,14 @@ import { ViewMode } from "./ParentComponent";
 import ProductList from "./productList";
 
 type HomePageProps = {
-  setSelectedPage: React.Dispatch<React.SetStateAction<number>>;
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
-function HomePage({ setSelectedPage, setViewMode }: HomePageProps) {
+function HomePage({ setViewMode }: HomePageProps) {
   return (
     <div>
-      <MarketingList
-        setSelectedPage={setSelectedPage}
-        setViewMode={setViewMode}
-      />
-      <ProductList
-        setSelectedPage={setSelectedPage}
-        setViewMode={setViewMode}
-      />
+      <MarketingList setViewMode={setViewMode} />
+      <ProductList setViewMode={setViewMode} />
     </div>
   );
 }
