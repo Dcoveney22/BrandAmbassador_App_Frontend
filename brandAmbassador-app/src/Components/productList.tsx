@@ -35,7 +35,7 @@ function ProductList() {
 
   return (
     <div>
-      {viewing ? (
+      {viewing && (
         <div>
           {data.map((product: BrandSKU) => (
             <ProductCard
@@ -48,11 +48,10 @@ function ProductList() {
             />
           ))}
         </div>
-      ) : (
-        <div>
-          <Button onClick={viewProducts} text="Get Price List" />
-        </div>
       )}
+      <div>
+        <Button onClick={viewProducts} text="Get Price List" />
+      </div>
     </div>
   );
 }

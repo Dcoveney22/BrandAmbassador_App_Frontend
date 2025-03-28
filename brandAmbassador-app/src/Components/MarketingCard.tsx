@@ -1,7 +1,4 @@
-import { useState } from "react";
 import "../App.css";
-import Button from "./Button";
-import ViewMarketingBudget from "./ViewMarketing";
 
 type MarketingProps = {
   Brand: string;
