@@ -3,6 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import ProductCard from "./ProductCard";
 import Button from "./Button";
 import { useState } from "react";
+import { ViewMode } from "./ParentComponent";
+type ProductListProps = {
+  setSelectedPage: React.Dispatch<React.SetStateAction<number>>;
+  setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
+};
 
 export type BrandSKU = {
   Brand: string;
@@ -16,7 +21,7 @@ export type BrandSKU = {
   Product_Code: string;
 };
 
-function ProductList() {
+function ProductList({ setSelectedPage, setViewMode }: ProductListProps) {
   const { data, isLoading } = useQuery({
     queryKey: [`products`],
     queryFn: getProducts,
@@ -50,7 +55,13 @@ function ProductList() {
         </div>
       )}
       <div>
-        <Button onClick={viewProducts} text="Get Price List" />
+        <Button
+          onClick={() => {
+            setSelectedPage(2);
+            setViewMode(ViewMode.ProductList);
+          }}
+          text="Get Price List"
+        />
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import MarketingCard from "./MarketingCard";
 import Button from "./Button";
 import { useState } from "react";
+import { ViewMode } from "./ParentComponent";
 
 export type MarketingBudget = {
   Brand: string;
@@ -24,7 +25,12 @@ export type MarketingBudget = {
   Total: number;
 };
 
-function MarketingList() {
+type MarketingListProps = {
+  setSelectedPage: React.Dispatch<React.SetStateAction<number>>;
+  setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
+};
+
+function MarketingList({ setSelectedPage, setViewMode }: MarketingListProps) {
   const { data: dataM, isLoading } = useQuery({
     queryKey: [`marketing`],
     queryFn: getMarketing,
@@ -44,7 +50,7 @@ function MarketingList() {
 
   return (
     <div>
-      {viewing ? (
+      {viewing && (
         <div>
           {dataM.map((budget: MarketingBudget) => (
             <MarketingCard
@@ -68,11 +74,16 @@ function MarketingList() {
             />
           ))}
         </div>
-      ) : (
-        <div>
-          <Button onClick={viewMarketing} text="Get Marketing" />
-        </div>
       )}
+      <div>
+        <Button
+          onClick={() => {
+            setSelectedPage(1);
+            setViewMode(ViewMode.MarketingList);
+          }}
+          text="Get Marketing"
+        />
+      </div>
     </div>
   );
 }
