@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 import Button from "./Button";
 import { useState } from "react";
 import { ViewMode } from "./ParentComponent";
+import Header from "./Header";
 
 export type BrandSKU = {
   Brand: string;
@@ -25,41 +26,34 @@ function ProductList({ setViewMode }: ProductListProps) {
     queryFn: getProducts,
   });
 
-  const [viewing, setViewing] = useState(false);
-  const viewProducts = () => {
-    setViewing(true);
-  };
-  const stopViewing = () => {
-    setViewing(false);
-  };
+  // const [viewing, setViewing] = useState(false);
+  // const viewProducts = () => {
+  //   setViewing(true);
+  // };
+  // const stopViewing = () => {
+  //   setViewing(false);
+  // };
   if (isLoading) return <div>Price List is Loading...</div>;
 
   console.log(data);
 
   return (
     <div>
-      {viewing && (
-        <div>
-          {data.map((product: BrandSKU) => (
-            <ProductCard
-              Brand={product.Brand}
-              SKU={product.SKU}
-              Wholesale={product.Wholesale}
-              RRP={product.RRP}
-              On_Trade={product.On_Trade}
-              Product_Code={product.Product_Code}
-            />
-          ))}
-        </div>
-      )}
+      <Header setViewMode={setViewMode} />
+      {/* {viewing && ( */}
       <div>
-        <Button
-          onClick={() => {
-            setViewMode(ViewMode.ProductList);
-          }}
-          text="Get Price List"
-        />
+        {data.map((product: BrandSKU) => (
+          <ProductCard
+            Brand={product.Brand}
+            SKU={product.SKU}
+            Wholesale={product.Wholesale}
+            RRP={product.RRP}
+            On_Trade={product.On_Trade}
+            Product_Code={product.Product_Code}
+          />
+        ))}
       </div>
+      {/* )} */}
     </div>
   );
 }

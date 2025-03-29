@@ -2,6 +2,7 @@ import { useState } from "react";
 import HomePage from "./HomePage";
 import MarketingList from "./MarketingList";
 import ProductList from "./productList";
+import Header from "./Header";
 
 export enum ViewMode {
   HomePage,
@@ -12,7 +13,6 @@ export enum ViewMode {
 function ParentComponent() {
   const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.HomePage);
   //   const [selectedPage, setSelectedPage] = useState<number>(0);
-
   if (viewMode === ViewMode.HomePage) {
     return <HomePage setViewMode={setViewMode} />;
   }

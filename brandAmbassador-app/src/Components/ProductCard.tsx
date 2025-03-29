@@ -30,17 +30,21 @@ function ProductCard({
   Product_Code,
 }: ProductProps) {
   return (
-    <div>
-      <img className="skuImage" src={`${Product_Code}_${SKU}.jpg`} alt="" />
-      <p>
-        Brand: {Brand}
-        <br />
-        SKU: {SKU}
-        <br />
-        Wholesale Price: £{Wholesale} || On-Trade Price: £{On_Trade} || RRP: £
-        {RRP}
-      </p>
-      <hr className="separator" />
+    <div className="card">
+      <div className="procuct-details">
+        <img
+          className="profilePhoto"
+          src={`${Product_Code}_${SKU}.jpg`}
+          alt=""
+        />
+        <p className="label">
+          <h2>Brand: {Brand}</h2>
+          <h3>SKU: {SKU}</h3>
+          <li>Wholesale Price: £{Wholesale} </li>
+          <li>On-Trade Price: £{On_Trade}</li>
+          <li>RRP: £{RRP}</li>
+        </p>
+      </div>
     </div>
   );
 }
