@@ -35,6 +35,17 @@ function HomePage({ setViewMode }: HomePageProps) {
         />
         <p className="homeTitle">MARKETING BUDGETS</p>
       </div>
+
+      <div className="card">
+        <img
+          className="homeCardMarketing"
+          src="marketing.png"
+          onClick={() => {
+            setViewMode(ViewMode.PriceTree);
+          }}
+        />
+        <p className="homeTitle">PRICING</p>
+      </div>
     </div>
   );
 }

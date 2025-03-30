@@ -2,12 +2,13 @@ import { useState } from "react";
 import HomePage from "./HomePage";
 import MarketingList from "./MarketingList";
 import ProductList from "./productList";
-import Header from "./Header";
+import GeneratePricing from "../Price_Tree_Component/generatePricing";
 
 export enum ViewMode {
   HomePage,
   MarketingList,
   ProductList,
+  PriceTree,
 }
 
 function ParentComponent() {
@@ -23,6 +24,10 @@ function ParentComponent() {
 
   if (viewMode === ViewMode.ProductList) {
     return <ProductList setViewMode={setViewMode} />;
+  }
+
+  if (viewMode === ViewMode.PriceTree) {
+    return <GeneratePricing setViewMode={setViewMode} />;
   }
 }
 

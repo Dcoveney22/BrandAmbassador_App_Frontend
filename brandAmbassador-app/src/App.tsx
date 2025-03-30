@@ -1,10 +1,10 @@
 import "./App.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import ProductList from "./Components/productList";
-import MarketingList from "./Components/MarketingList";
-import ViewMarketingBudget from "./Components/ViewMarketing";
-import HomePage from "./Components/HomePage";
-import ParentComponent from "./Components/ParentComponent";
+import ProductList from "./Marketing_Product_Components/productList";
+import MarketingList from "./Marketing_Product_Components/MarketingList";
+import ViewMarketingBudget from "./Marketing_Product_Components/ViewMarketing";
+import HomePage from "./Marketing_Product_Components/HomePage";
+import ParentComponent from "./Marketing_Product_Components/ParentComponent";
 
 function App() {
   const queryClient = new QueryClient();
