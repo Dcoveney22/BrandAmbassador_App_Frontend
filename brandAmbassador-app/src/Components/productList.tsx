@@ -5,6 +5,7 @@ import Button from "./Button";
 import { useState } from "react";
 import { ViewMode } from "./ParentComponent";
 import Header from "./Header";
+import Loader from "./loader";
 
 export type BrandSKU = {
   Brand: string;
@@ -33,7 +34,7 @@ function ProductList({ setViewMode }: ProductListProps) {
   // const stopViewing = () => {
   //   setViewing(false);
   // };
-  if (isLoading) return <div>Price List is Loading...</div>;
+  if (isLoading) return <Loader />;
 
   console.log(data);
 

@@ -1,6 +1,6 @@
 @import url(Button.css);
 @import url(ProductCard.css);
-
+@import url(loader.css);
 #root {
   max-width: 1280px;
   min-width: 350px;

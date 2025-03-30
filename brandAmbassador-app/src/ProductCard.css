@@ -1,20 +1,55 @@
 .card {
-  margin: 1rem;
-  display: grid;
+  margin: 10px;
+  display: inline-block;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   row-gap: 1rem;
   background-color: rgb(121, 109, 109);
-  width: 18rem;
-  height: 15rem;
+  width: 400px;
+  height: 18rem;
   border-radius: 2.4rem;
   box-shadow: var(--pp-box-shadow);
 }
+.productCard {
+  margin: 10px;
+  display: inline-block;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  background-color: rgb(121, 109, 109);
+  width: 400px;
+  height: 18rem;
+  border-radius: 2.4rem;
+  box-shadow: var(--pp-box-shadow);
+}
+.marketingCard {
+  margin: 1rem;
+  display: inline-block;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  background-color: rgb(121, 109, 109);
+  width: 400px;
+  height: 800px;
+  border-radius: 2.4rem;
+  box-shadow: var(--pp-box-shadow);
+}
+.homeCard {
+  width: 10rem;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1.4rem;
+}
 
 .profilePhoto {
-  width: 8rem;
-  margin-right: 200px;
-  border-radius: 50%;
+  width: 125px;
+  height: 125px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  float: left;
+  border-radius: 2.5rem;
   box-shadow: var(--pp-box-shadow);
 }
 
@@ -46,12 +81,7 @@
 }
 li {
   display: block;
-}
-.homeCard {
-  width: 10rem;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 1.4rem;
+  /* text-align: left; */
 }
 
 .homeCardMarketing {
@@ -59,4 +89,62 @@ li {
   width: 10rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.marketingProfilePhoto {
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  float: left;
+  border-radius: 2.5rem;
+  box-shadow: var(--pp-box-shadow);
+}
+h2 {
+  margin-bottom: 10px;
+  margin-top: 0%;
+  float: left;
+}
+.insideDiv {
+  width: 100%;
+  margin: 10px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+.miniTitle {
+  font-weight: 700;
+  text-align: justify;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.brandSpace {
+  margin-top: 80px;
+}
+.brandTitle {
+  display: inline-block;
+  font-weight: 850;
+  font-size: x-large;
+  float: none;
+  align-self: top;
+}
+.homeTitle {
+  display: grid;
+  font-weight: 850;
+  font-size: x-large;
+  float: bottom;
+  align-self: top;
+}
+.budgetItems {
+  float: none;
+  text-align: justify;
+  margin-left: 10px;
+}
+.totals {
+  float: none;
+  margin-left: 10px;
+  font-size: larger;
+  font-weight: 700;
+  text-align: justify;
 }

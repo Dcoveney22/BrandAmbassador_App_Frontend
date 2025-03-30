@@ -22,19 +22,18 @@ function HomePage({ setViewMode }: HomePageProps) {
             setViewMode(ViewMode.ProductList);
           }}
         />
-        <h2>PRICE LIST</h2>
+        <p className="homeTitle">PRICE LIST</p>
       </div>
 
       <div className="card">
         <img
           className="homeCardMarketing"
           src="marketing.png"
-          alt=""
           onClick={() => {
             setViewMode(ViewMode.MarketingList);
           }}
         />
-        <h2>MARKETING BUDGETS</h2>
+        <p className="homeTitle">MARKETING BUDGETS</p>
       </div>
     </div>
   );
