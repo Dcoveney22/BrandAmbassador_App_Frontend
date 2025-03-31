@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
+import formValueProcessing from "../Functions/formValueProcessing";
 
 type PricingFormTanProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
 interface PricingFormValues {
+  Brand: string;
   SKU: string;
   CL: number;
   ABV: number;
   Import_Origin: string;
+  Ex_Works: number;
 }
 function PricingFormTan({ setViewMode }: PricingFormTanProps) {
   //   const pricingFormTan: React.FC = () => {
@@ -22,19 +25,43 @@ function PricingFormTan({ setViewMode }: PricingFormTanProps) {
       Import_Origin: "EU",
     } as PricingFormValues,
     onSubmit: async ({ value }) => {
-      alert(JSON.stringify(value, null, 2));
+      formValueProcessing(value);
+      // alert(JSON.stringify(value, null, 2));
     },
   });
 
   return (
     <form
-      className="productCard"
+      className="productFormCard"
       onSubmit={(e) => {
         e.preventDefault();
         form.handleSubmit();
       }}
     >
       <h1>Submit Product</h1>
+      <form.Field
+        name="Brand"
+        validators={{
+          onChange: (value) =>
+            value === "" ? "please add an a answer" : undefined,
+        }}
+      >
+        {(field) => (
+          <div>
+            <label htmlFor="Brand">Brand Name</label>
+            <input
+              type="Brand"
+              id="Brand"
+              name="Brand"
+              value={field.state.value}
+              onChange={(e) => field.handleChange(e.target.value)}
+            />
+            {field.state.meta.errors.length > 0 && (
+              <em>{field.state.meta.errors.join(", ")}</em>
+            )}
+          </div>
+        )}
+      </form.Field>
       <form.Field
         name="SKU"
         validators={{
@@ -62,14 +89,14 @@ function PricingFormTan({ setViewMode }: PricingFormTanProps) {
         name="CL"
         validators={{
           onChange: ({ value }) =>
-            value === 0 ? "please select one" : undefined,
+            value <= 0 || null ? "please select one" : undefined,
         }}
       >
         {(field) => (
           <div>
             <label htmlFor="CL">Product Size(cl)</label>
             <input
-              type="text"
+              type="number"
               id="CL"
               name="CL"
               value={field.state.value}
@@ -83,17 +110,17 @@ function PricingFormTan({ setViewMode }: PricingFormTanProps) {
       </form.Field>
 
       <form.Field
-        name="CL"
+        name="ABV"
         validators={{
           onChange: ({ value }) =>
-            value === 0 ? "please add an answer" : undefined,
+            value <= 0 || null ? "please add an answer" : undefined,
         }}
       >
         {(field) => (
           <div>
             <label htmlFor="ABV">ABV(%)</label>
             <input
-              type="text"
+              type="number"
               id="ABV"
               name="ABV"
               value={field.state.value}
@@ -132,6 +159,31 @@ function PricingFormTan({ setViewMode }: PricingFormTanProps) {
           </div>
         )}
       </form.Field>
+      <form.Field
+        name="Ex_Works"
+        validators={{
+          onChange: ({ value }) =>
+            value <= 0 || null ? "please add an answer" : undefined,
+        }}
+      >
+        {(field) => (
+          <div>
+            <label htmlFor="Ex_Works">Ex-Works Price(£)</label>
+            <input
+              type="number"
+              id="Ex_Works"
+              name="Ex_Works"
+              value={field.state.value}
+              onChange={(e) => field.handleChange(e.target.valueAsNumber)}
+            />
+            {field.state.meta.errors.length > 0 && (
+              <em>{field.state.meta.errors.join(", ")}</em>
+            )}
+          </div>
+        )}
+      </form.Field>
+
+      <button onClick={form.handleSubmit}>Submit Product</button>
     </form>
   );
 }

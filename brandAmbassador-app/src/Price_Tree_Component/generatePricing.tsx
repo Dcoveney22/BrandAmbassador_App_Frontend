@@ -38,6 +38,9 @@ function GeneratePricing({ setViewMode }: GeneratePricingProps) {
     <div>
       <Header setViewMode={setViewMode} />
       <div>
+        <PricingFormTan setViewMode={setViewMode} />
+      </div>
+      <div>
         {data.map((product: BrandSKU) => (
           <PricingCard
             Brand={product.Brand}
@@ -49,7 +52,6 @@ function GeneratePricing({ setViewMode }: GeneratePricingProps) {
           />
         ))}
       </div>
-      <PricingFormTan setViewMode={setViewMode} />
     </div>
   );
 }
