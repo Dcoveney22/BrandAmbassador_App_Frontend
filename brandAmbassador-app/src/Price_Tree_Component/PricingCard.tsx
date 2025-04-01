@@ -17,34 +17,39 @@ type PricingProps = {
   SKU: string;
   CL: number;
   ABV: number;
-  Ex_Works: number;
-  Product_Code: string;
+  // Import_Origin: string;
+  // Ex_Works: number;
+  // Duty: number;
+  RRP: number;
 };
 
-function PricingCard({
+function PricingTreeCard({
   Brand,
   SKU,
   CL,
   ABV,
-  Ex_Works,
-  Product_Code,
+  // Import_Origin,
+  // Ex_Works,
+  // Duty,
+  RRP,
 }: PricingProps) {
   return (
     <div className="productCard">
       <div className="insideDiv">
-        <img
+        {/* <img
           className="profilePhoto"
           src={`${Product_Code}_${SKU}.jpg`}
           alt=""
-        />
+        /> */}
         <p className="label">
           <p className="brandTitle">{Brand}</p>
           <p className="brandSpace"></p>
           <p className="miniTitle">SKU: {SKU}</p>
           <p className="budgetItems">
-            <li>Size(cl): {CL} </li>
+            <li>Size(cl): {CL}</li>
             <li>ABV(%): {ABV}</li>
-            <li>Ex-Works(£): {Ex_Works}</li>
+            {/* <li>Ex-Works(£): {Ex_Works}</li> */}
+            <li>RRP: £{RRP}</li>
           </p>
         </p>
       </div>
@@ -52,4 +57,4 @@ function PricingCard({
   );
 }
 
-export default PricingCard;
+export default PricingTreeCard;

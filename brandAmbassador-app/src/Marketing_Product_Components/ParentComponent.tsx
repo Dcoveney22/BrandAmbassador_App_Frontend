@@ -3,12 +3,14 @@ import HomePage from "./HomePage";
 import MarketingList from "./MarketingList";
 import ProductList from "./productList";
 import GeneratePricing from "../Price_Tree_Component/generatePricing";
+import ResultsDisplay from "../Price_Tree_Component/resultsDisplay";
 
 export enum ViewMode {
   HomePage,
   MarketingList,
   ProductList,
   PriceTree,
+  ResultsDisplay,
 }
 
 function ParentComponent() {
@@ -28,6 +30,9 @@ function ParentComponent() {
 
   if (viewMode === ViewMode.PriceTree) {
     return <GeneratePricing setViewMode={setViewMode} />;
+  }
+  if (viewMode === ViewMode.ResultsDisplay) {
+    return <ResultsDisplay setViewMode={setViewMode} />;
   }
 }
 

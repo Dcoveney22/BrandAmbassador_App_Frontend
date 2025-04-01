@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
 import formValueProcessing from "../Functions/formValueProcessing";
+import HomePageButton from "../Marketing_Product_Components/HomePageButton";
 
 type PricingFormTanProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
@@ -25,7 +26,9 @@ function PricingFormTan({ setViewMode }: PricingFormTanProps) {
       Import_Origin: "EU",
     } as PricingFormValues,
     onSubmit: async ({ value }) => {
-      formValueProcessing(value);
+      await formValueProcessing(value);
+      // setViewMode(ViewMode.ProductList);
+
       // alert(JSON.stringify(value, null, 2));
     },
   });

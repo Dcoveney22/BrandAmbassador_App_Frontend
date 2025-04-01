@@ -6,9 +6,10 @@ import { useState } from "react";
 import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
 import Header from "../Marketing_Product_Components/Header";
 import Loader from "../Marketing_Product_Components/loader";
-import PricingCard from "./PricingCard";
+import PricingTreeCard from "./PricingCard";
 import ProductForm from "./pricingFormZOD";
 import PricingFormTan from "./PricingFormTan";
+import formValueProcessing from "../Functions/formValueProcessing";
 
 export type BrandSKU = {
   Brand: string;
@@ -29,6 +30,7 @@ function GeneratePricing({ setViewMode }: GeneratePricingProps) {
     queryKey: [`products`],
     queryFn: getProducts,
   });
+  // await formValueProcessing;
 
   if (isLoading) return <Loader />;
 
@@ -40,9 +42,10 @@ function GeneratePricing({ setViewMode }: GeneratePricingProps) {
       <div>
         <PricingFormTan setViewMode={setViewMode} />
       </div>
+
       <div>
         {data.map((product: BrandSKU) => (
-          <PricingCard
+          <PricingTreeCard
             Brand={product.Brand}
             SKU={product.SKU}
             CL={product.CL}
