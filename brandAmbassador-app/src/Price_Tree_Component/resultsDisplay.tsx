@@ -7,6 +7,7 @@ import Loader from "../Marketing_Product_Components/loader";
 import PricingTreeCard from "./PricingCard";
 import PricingFormTan from "./PricingFormTan";
 import formValueProcessing from "../Functions/formValueProcessing";
+import { PricingTreeSKU } from "../Functions/functionTypes";
 
 export type priceSKU = {
   Brand: string;
@@ -16,31 +17,31 @@ export type priceSKU = {
   RRP: number;
 };
 type ResultsDisplayProps = {
+  setResult: React.Dispatch<React.SetStateAction<PricingTreeSKU>>;
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
-async function ResultsDisplay({ setViewMode }: ResultsDisplayProps) {
+function ResultsDisplay({ setResult, setViewMode }: ResultsDisplayProps) {
   // if (isLoading) return <Loader />;
   //   console.log(data)
 
   return (
     <div>
       <Header setViewMode={setViewMode} />
-      <div>
-        <PricingFormTan setViewMode={setViewMode} />
-      </div>
       <div></div>
-      {/* <div>
-        {valueArray.map((product: priceSKU) => (
-          <PricingTreeCard
-            Brand={product.Brand}
-            SKU={product.SKU}
-            CL={product.CL}
-            ABV={product.ABV}
-            RRP={product.RRP}
-          />
-        ))}
-      </div> */}
+      <div></div>
+      <div>
+        <PricingTreeCard
+          Brand={product.Brand}
+          SKU={""}
+          CL={0}
+          ABV={0}
+          RRP={0}
+          Duty={0}
+          Import_Origin={""}
+          Ex_Works={0}
+        />
+      </div>
     </div>
   );
 }

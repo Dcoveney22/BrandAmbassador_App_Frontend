@@ -1,4 +1,5 @@
 import "../App.css";
+import { PricingTreeSKU } from "../Functions/functionTypes";
 
 // type BrandSKU = {
 //   Brand: string;
@@ -28,11 +29,11 @@ function PricingTreeCard({
   SKU,
   CL,
   ABV,
-  // Import_Origin,
-  // Ex_Works,
-  // Duty,
+  Import_Origin,
+  Ex_Works,
+  Duty,
   RRP,
-}: PricingProps) {
+}: PricingTreeSKU) {
   return (
     <div className="productCard">
       <div className="insideDiv">
@@ -46,9 +47,12 @@ function PricingTreeCard({
           <p className="brandSpace"></p>
           <p className="miniTitle">SKU: {SKU}</p>
           <p className="budgetItems">
+            <li>Brand: {Brand}</li>
+            <li>Import Origin: {Import_Origin}</li>
+            <li>Ex-Works: {Ex_Works}</li>
+            <li>Duty: {Duty}</li>
             <li>Size(cl): {CL}</li>
             <li>ABV(%): {ABV}</li>
-            {/* <li>Ex-Works(£): {Ex_Works}</li> */}
             <li>RRP: £{RRP}</li>
           </p>
         </p>

@@ -4,6 +4,7 @@ import MarketingList from "./MarketingList";
 import ProductList from "./productList";
 import GeneratePricing from "../Price_Tree_Component/generatePricing";
 import ResultsDisplay from "../Price_Tree_Component/resultsDisplay";
+import { PricingTreeSKU } from "../Functions/functionTypes";
 
 export enum ViewMode {
   HomePage,
@@ -14,6 +15,8 @@ export enum ViewMode {
 }
 
 function ParentComponent() {
+  const [result, setResult] = useState<any | null>(null);
+  const [foo, setFoo] = useState("foo");
   const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.HomePage);
   //   const [selectedPage, setSelectedPage] = useState<number>(0);
   if (viewMode === ViewMode.HomePage) {
@@ -32,7 +35,7 @@ function ParentComponent() {
     return <GeneratePricing setViewMode={setViewMode} />;
   }
   if (viewMode === ViewMode.ResultsDisplay) {
-    return <ResultsDisplay setViewMode={setViewMode} />;
+    return <ResultsDisplay setViewMode={setViewMode} setResult={setResult} />;
   }
 }
 

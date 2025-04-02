@@ -8,7 +8,7 @@ const americasShipping = 2.0;
 const africasShipping = 2.5;
 const oceanaShipping = 3.0;
 
-export async function formValueProcessing(formResult: FormDataSKU) {
+export async function formValueProcessing(formResult: PricingTreeSKU) {
   const newArray = [];
   const setCosts = goodsIn + warehouseRent + deliveryCost;
   let importCost = 0;
@@ -35,8 +35,9 @@ export async function formValueProcessing(formResult: FormDataSKU) {
     duty = (32.79 / 100) * abvSize;
     rrp = formResult.Ex_Works + duty + setCosts + importCost * 1.3;
   }
-  newArray.push(new PricingTreeSKU(formResult, duty, rrp));
-  console.log(newArray);
+
+  const result = new PricingTreeSKU(formResult, duty, rrp);
+  return result;
 }
 
 export default formValueProcessing;

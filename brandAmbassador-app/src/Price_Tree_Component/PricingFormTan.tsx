@@ -3,9 +3,13 @@ import { useForm } from "@tanstack/react-form";
 import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
 import formValueProcessing from "../Functions/formValueProcessing";
 import HomePageButton from "../Marketing_Product_Components/HomePageButton";
+import { PricingTreeSKU } from "../Functions/functionTypes";
+import setResult from "../Marketing_Product_Components/ParentComponent";
 
 type PricingFormTanProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
+  setResult: React.Dispatch<React.SetStateAction<any>>;
+  setFoo: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
 interface PricingFormValues {
@@ -16,18 +20,20 @@ interface PricingFormValues {
   Import_Origin: string;
   Ex_Works: number;
 }
-function PricingFormTan({ setViewMode }: PricingFormTanProps) {
-  //   const pricingFormTan: React.FC = () => {
+function PricingFormTan({ setViewMode, setResult }: PricingFormTanProps) {
+  // const pricingFormTan: React.FC = () => {
   const form = useForm({
     defaultValues: {
+      Brand: "",
       SKU: "",
       CL: 0,
       ABV: 0,
       Import_Origin: "EU",
-    } as PricingFormValues,
+    } as PricingTreeSKU,
     onSubmit: async ({ value }) => {
-      await formValueProcessing(value);
-      // setViewMode(ViewMode.ProductList);
+      setViewMode(ViewMode.ResultsDisplay);
+      setResult(formValueProcessing(value));
+      console.log(value);
 
       // alert(JSON.stringify(value, null, 2));
     },
