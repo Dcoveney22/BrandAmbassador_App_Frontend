@@ -1,0 +1,15 @@
+import { HomeIcon } from "../icons/HomeIcon";
+import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
+import { ResetButton } from "../icons/ResetButton";
+
+type BackButtonProps = {
+  setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
+};
+function BackButton({ setViewMode }: BackButtonProps) {
+  const onButtonClick = () => {
+    setViewMode(ViewMode.PriceTree);
+  };
+
+  return <ResetButton id="resetButton" onClick={onButtonClick} />;
+}
+export default BackButton;

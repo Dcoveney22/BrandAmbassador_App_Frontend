@@ -5,3 +5,7 @@
 #homeButton.hover {
   color: blueviolet;
 }
+#resetButton {
+  color: blue;
+  top: 10rem;
+}

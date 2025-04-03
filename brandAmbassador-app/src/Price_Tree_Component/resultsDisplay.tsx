@@ -4,10 +4,13 @@ import { useState } from "react";
 import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
 import Header from "../Marketing_Product_Components/Header";
 import Loader from "../Marketing_Product_Components/loader";
-import PricingTreeCard from "./PricingCard";
+import PricingTreeCard from "./PricingTreeCard";
 import PricingFormTan from "./PricingFormTan";
 import formValueProcessing from "../Functions/formValueProcessing";
 import { PricingTreeSKU } from "../Functions/functionTypes";
+import Button from "../Marketing_Product_Components/Button";
+import ResetButton from "./ResetButton";
+import BackButton from "./ResetButton";
 
 export type priceSKU = {
   Brand: string;
@@ -17,31 +20,29 @@ export type priceSKU = {
   RRP: number;
 };
 type ResultsDisplayProps = {
-  setResult: React.Dispatch<React.SetStateAction<PricingTreeSKU>>;
+  result: PricingTreeSKU;
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
-function ResultsDisplay({ setResult, setViewMode }: ResultsDisplayProps) {
-  // if (isLoading) return <Loader />;
+function ResultsDisplay({ result, setViewMode }: ResultsDisplayProps) {
   //   console.log(data)
 
   return (
     <div>
       <Header setViewMode={setViewMode} />
-      <div></div>
-      <div></div>
       <div>
         <PricingTreeCard
-          Brand={product.Brand}
-          SKU={""}
-          CL={0}
-          ABV={0}
-          RRP={0}
-          Duty={0}
-          Import_Origin={""}
-          Ex_Works={0}
+          Brand={result.Brand}
+          SKU={result.SKU}
+          CL={result.CL}
+          ABV={result.ABV}
+          RRP={result.RRP}
+          Duty={result.Duty}
+          Import_Origin={result.Import_Origin}
+          Ex_Works={result.Ex_Works}
         />
       </div>
+      <BackButton setViewMode={setViewMode} />
     </div>
   );
 }

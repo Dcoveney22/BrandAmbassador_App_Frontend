@@ -4,12 +4,10 @@ import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
 import formValueProcessing from "../Functions/formValueProcessing";
 import HomePageButton from "../Marketing_Product_Components/HomePageButton";
 import { PricingTreeSKU } from "../Functions/functionTypes";
-import setResult from "../Marketing_Product_Components/ParentComponent";
 
 type PricingFormTanProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
-  setResult: React.Dispatch<React.SetStateAction<any>>;
-  setFoo: React.Dispatch<React.SetStateAction<ViewMode>>;
+  setResult: React.Dispatch<React.SetStateAction<PricingTreeSKU | null>>;
 };
 
 interface PricingFormValues {
@@ -31,9 +29,8 @@ function PricingFormTan({ setViewMode, setResult }: PricingFormTanProps) {
       Import_Origin: "EU",
     } as PricingTreeSKU,
     onSubmit: async ({ value }) => {
+      setResult(await formValueProcessing(value));
       setViewMode(ViewMode.ResultsDisplay);
-      setResult(formValueProcessing(value));
-      console.log(value);
 
       // alert(JSON.stringify(value, null, 2));
     },

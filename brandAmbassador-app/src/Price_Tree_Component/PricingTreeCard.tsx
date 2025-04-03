@@ -44,7 +44,6 @@ function PricingTreeCard({
         /> */}
         <p className="label">
           <p className="brandTitle">{Brand}</p>
-          <p className="brandSpace"></p>
           <p className="miniTitle">SKU: {SKU}</p>
           <p className="budgetItems">
             <li>Brand: {Brand}</li>
