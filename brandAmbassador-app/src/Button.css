@@ -6,6 +6,26 @@
   color: blueviolet;
 }
 #resetButton {
-  color: blue;
   top: 10rem;
+  color: blue;
+  display: flexbox;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#saveButton {
+  top: 10rem;
+  color: blue;
+  display: flexbox;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#resultsButtonContainer {
+  background-color: #d8e7d0;
+  padding: 10px 20px;
+  color: var(--pp-dark-green);
+  display: flex;
+  justify-content: space-between;
 }

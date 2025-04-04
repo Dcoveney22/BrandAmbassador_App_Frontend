@@ -11,6 +11,7 @@ import { PricingTreeSKU } from "../Functions/functionTypes";
 import Button from "../Marketing_Product_Components/Button";
 import ResetButton from "./ResetButton";
 import BackButton from "./ResetButton";
+import SaveButton from "./SaveButton";
 
 export type priceSKU = {
   Brand: string;
@@ -42,7 +43,10 @@ function ResultsDisplay({ result, setViewMode }: ResultsDisplayProps) {
           Ex_Works={result.Ex_Works}
         />
       </div>
-      <BackButton setViewMode={setViewMode} />
+      <div id="resultsButtonContainer">
+        <BackButton setViewMode={setViewMode} />
+        <SaveButton result={result} />
+      </div>
     </div>
   );
 }

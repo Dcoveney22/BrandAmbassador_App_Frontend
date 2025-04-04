@@ -1,6 +1,6 @@
 import { HomeIcon } from "../icons/HomeIcon";
 import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
-import { ResetButton } from "../icons/ResetButton";
+import { ResetIcon } from "../icons/ResetIcon";
 
 type BackButtonProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
@@ -10,6 +10,6 @@ function BackButton({ setViewMode }: BackButtonProps) {
     setViewMode(ViewMode.PriceTree);
   };
 
-  return <ResetButton id="resetButton" onClick={onButtonClick} />;
+  return <ResetIcon id="resetButton" onClick={onButtonClick} />;
 }
 export default BackButton;
