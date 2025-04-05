@@ -1,5 +1,5 @@
 import { HomeIcon } from "../icons/HomeIcon";
-import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
+import { ViewMode } from "../Main_Components/ParentComponent";
 import { ResetIcon } from "../icons/ResetIcon";
 
 type BackButtonProps = {

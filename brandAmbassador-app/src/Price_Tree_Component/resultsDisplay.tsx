@@ -1,17 +1,9 @@
-import { getProducts } from "../Functions/getProducts";
-import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
-import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
-import Header from "../Marketing_Product_Components/Header";
-import Loader from "../Marketing_Product_Components/loader";
+import { ViewMode } from "../Main_Components/ParentComponent";
+import Header from "../Main_Components/Header";
 import PricingTreeCard from "./PricingTreeCard";
-import PricingFormTan from "./PricingFormTan";
-import formValueProcessing from "../Functions/formValueProcessing";
 import { PricingTreeSKU } from "../Functions/functionTypes";
-import Button from "../Marketing_Product_Components/Button";
-import ResetButton from "./ResetButton";
-import BackButton from "./ResetButton";
-import SaveButton from "./SaveButton";
+import BackButton from "../Button_Components/ResetButton";
+import SaveButton from "../Button_Components/SaveButton";
 
 export type priceSKU = {
   Brand: string;
@@ -23,6 +15,17 @@ export type priceSKU = {
 type ResultsDisplayProps = {
   result: PricingTreeSKU;
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
+};
+
+const testSendData: PricingTreeSKU = {
+  Brand: "testBrand",
+  SKU: "testSKU",
+  CL: 70,
+  ABV: 45,
+  RRP: 22.56,
+  Duty: 4,
+  Import_Origin: "testImport",
+  Ex_Works: 12.0,
 };
 
 function ResultsDisplay({ result, setViewMode }: ResultsDisplayProps) {

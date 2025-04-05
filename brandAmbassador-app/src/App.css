@@ -33,6 +33,7 @@
 }
 .header {
   background-color: #d8e7d0;
+  top: 20px;
   padding: 10px 20px;
   color: var(--pp-dark-green);
   display: flex;
@@ -89,4 +90,11 @@
   height: 600px;
   border-radius: 2.4rem;
   box-shadow: var(--pp-box-shadow);
+}
+.layoutContainer {
+  position: relative;
+  padding: 2rem;
+}
+.bigSpace {
+  height: 500px;
 }

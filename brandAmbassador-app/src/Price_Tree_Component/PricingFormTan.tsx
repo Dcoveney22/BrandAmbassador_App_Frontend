@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
-import { ViewMode } from "../Marketing_Product_Components/ParentComponent";
+import { ViewMode } from "../Main_Components/ParentComponent";
 import formValueProcessing from "../Functions/formValueProcessing";
-import HomePageButton from "../Marketing_Product_Components/HomePageButton";
+import HomePageButton from "../Button_Components/HomePageButton";
 import { PricingTreeSKU } from "../Functions/functionTypes";
 
 type PricingFormTanProps = {
@@ -48,7 +48,7 @@ function PricingFormTan({ setViewMode, setResult }: PricingFormTanProps) {
       <form.Field
         name="Brand"
         validators={{
-          onChange: (value) =>
+          onChange: ({ value }) =>
             value === "" ? "please add an a answer" : undefined,
         }}
       >
@@ -71,7 +71,7 @@ function PricingFormTan({ setViewMode, setResult }: PricingFormTanProps) {
       <form.Field
         name="SKU"
         validators={{
-          onChange: (value) =>
+          onChange: ({ value }) =>
             value === "" ? "please add an a answer" : undefined,
         }}
       >

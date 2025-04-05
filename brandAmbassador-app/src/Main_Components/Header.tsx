@@ -1,5 +1,5 @@
-import HomePageButton from "./HomePageButton";
-import { ViewMode } from "./ParentComponent";
+import HomePageButton from "../Button_Components/HomePageButton";
+import { ViewMode } from "../Main_Components/ParentComponent";
 type HeaderProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };

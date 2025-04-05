@@ -1,9 +1,9 @@
 import { SetStateAction } from "react";
-import Button from "./Button";
-import HomePageButton from "./HomePageButton";
-import MarketingList from "./MarketingList";
-import { ViewMode } from "./ParentComponent";
-import ProductList from "./productList";
+import Button from "../Marketing_Product_Components/Button";
+import HomePageButton from "../Button_Components/HomePageButton";
+import MarketingList from "../Marketing_Product_Components/MarketingList";
+import { ViewMode } from "../Main_Components/ParentComponent";
+import ProductList from "../Marketing_Product_Components/productList";
 import Header from "./Header";
 
 type HomePageProps = {
@@ -13,7 +13,7 @@ type HomePageProps = {
 function HomePage({ setViewMode }: HomePageProps) {
   return (
     <div>
-      <Header setViewMode={setViewMode} />
+      {/* <Header setViewMode={setViewMode} /> */}
       <div className="card">
         <img
           className="homeCard"

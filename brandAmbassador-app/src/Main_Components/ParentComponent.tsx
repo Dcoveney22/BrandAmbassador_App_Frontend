@@ -1,10 +1,11 @@
 import { useState } from "react";
-import HomePage from "./HomePage";
-import MarketingList from "./MarketingList";
-import ProductList from "./productList";
+import HomePage from "../Main_Components/HomePage";
+import MarketingList from "../Marketing_Product_Components/MarketingList";
+import ProductList from "../Marketing_Product_Components/productList";
 import GeneratePricing from "../Price_Tree_Component/generatePricing";
 import ResultsDisplay from "../Price_Tree_Component/ResultsDisplay";
 import { PricingTreeSKU } from "../Functions/functionTypes";
+import HeaderCopy from "./Header_copy";
 
 export enum ViewMode {
   HomePage,
@@ -34,8 +35,11 @@ function ParentComponent() {
   if (viewMode === ViewMode.PriceTree) {
     return <GeneratePricing setViewMode={setViewMode} setResult={setResult} />;
   }
-  if (viewMode === ViewMode.ResultsDisplay) {
+  if (viewMode === ViewMode.ResultsDisplay && result !== null) {
     return <ResultsDisplay setViewMode={setViewMode} result={result} />;
   }
 }
+
 export default ParentComponent;
+
+//layout component now
