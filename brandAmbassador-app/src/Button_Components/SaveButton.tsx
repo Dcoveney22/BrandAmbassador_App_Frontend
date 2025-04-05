@@ -3,6 +3,7 @@ import { ViewMode } from "../Main_Components/ParentComponent";
 import { ResetIcon } from "../icons/ResetIcon";
 import { SaveIcon } from "../icons/SaveIcon";
 import { PricingTreeSKU } from "../Functions/functionTypes";
+import sendSaveData from "../Functions/testSaveFunction";
 
 type SaveButtonProps = {
   //   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
@@ -10,7 +11,7 @@ type SaveButtonProps = {
 };
 function SaveButton({ result }: SaveButtonProps) {
   const onButtonClick = () => {
-    alert(result);
+    sendSaveData;
   };
 
   return <SaveIcon id="saveButton" onClick={onButtonClick} />;
