@@ -14,8 +14,7 @@ type HomePageProps = {
 function HomePage() {
   const { setViewMode } = useContextAndErrorIfNull(PageContext);
   return (
-    <div className="homDiv">
-      {/* <Header setViewMode={setViewMode} /> */}
+    <div className="homeDiv">
       <div className="card">
         <img
           className="homeCard"

@@ -39,8 +39,7 @@ function ProductList({ setViewMode }: ProductListProps) {
   console.log(data);
 
   return (
-    <div>
-      <Header setViewMode={setViewMode} />
+    <div className="homeDiv">
       {/* {viewing && ( */}
       <div>
         {data.map((product: BrandSKU) => (

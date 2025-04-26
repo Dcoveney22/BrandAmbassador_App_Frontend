@@ -51,9 +51,7 @@ function MarketingList({ setViewMode }: MarketingListProps) {
   console.log(dataM);
 
   return (
-    <div>
-      <Header setViewMode={setViewMode} />
-      {/* {viewing && ( */}
+    <div className="homeDiv">
       <div>
         {dataM.map((budget: MarketingBudget) => (
           <MarketingCard

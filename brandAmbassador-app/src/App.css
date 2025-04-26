@@ -16,7 +16,7 @@
   --pp-box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   --pp-box-shadow-light: rgba(0, 0, 0, 0.24) 0rem 0.3rem 0.4rem;
 
-  background-color: peachpuff;
+  background-color: black;
 
   color: white;
   text-align: center;
@@ -32,7 +32,8 @@
   transition: filter 300ms;
 }
 .header {
-  background-color: #d8e7d0;
+  background-color: darkcyan;
+  border-radius: 2em;
   top: 20px;
   padding: 10px 20px;
   color: var(--pp-dark-green);
@@ -66,9 +67,16 @@
   padding: 2em;
   display: inline-block;
   color: aliceblue;
+  background-color: darkcyan;
+}
+.productCard {
+  background-color: darkcyan;
+}
+.marketingCard {
+  background-color: darkcyan;
 }
 .card:hover {
-  background-color: cornflowerblue;
+  background-color: rgb(178, 211, 203);
   color: black;
   box-shadow: 10px 5px 5px black;
   text-shadow: 5px 2.5px 2.5px whitesmoke;
@@ -93,7 +101,7 @@
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   row-gap: 1rem;
-  background-color: rgb(121, 109, 109);
+  background-color: darkcyan;
   width: 400px;
   height: 600px;
   border-radius: 2.4rem;
@@ -111,10 +119,21 @@
     width: auto;
     display: block;
   }
+  .productCard {
+    width: auto;
+    display: flex;
+  }
+  .productCard img {
+    display: none;
+  }
+  .marketingCard {
+    width: auto;
+    display: flex;
+  }
 }
 @media only screen and (min-width: 600px) {
-  .homDiv {
-    display: inline-flex;
+  .homeDiv {
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }

@@ -5,16 +5,16 @@ const testSendData: PricingTreeSKU = {
   SKU: "testSKU",
   CL: 70,
   ABV: 45,
-  RRP: 22.56,
-  Duty: 4,
   Import_Origin: "testImport",
   Ex_Works: 12.0,
+  Duty: 4,
+  RRP: 22.56,
 };
 
-function sendSaveData() {
+function sendSaveData(data) {
   fetch("http://localhost:3000/priceTreeData", {
     method: "POST",
-    body: JSON.stringify(testSendData),
+    body: JSON.stringify(data),
     headers: { "Content-Type": "application/json; charset=UTF-8" },
   });
 }

@@ -11,7 +11,8 @@ type SaveButtonProps = {
 };
 function SaveButton({ result }: SaveButtonProps) {
   const onButtonClick = () => {
-    sendSaveData;
+    sendSaveData(result);
+    // console.log(result);
   };
 
   return <SaveIcon id="saveButton" onClick={onButtonClick} />;

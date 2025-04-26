@@ -7,7 +7,6 @@ const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div className="layoutContainer">
       <Header />
-      <div className="bigSpace"></div>
       {children}
     </div>
   );

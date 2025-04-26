@@ -37,8 +37,7 @@ function GeneratePricing({ setViewMode, setResult }: GeneratePricingProps) {
   //   console.log(data)
 
   return (
-    <div>
-      <Header setViewMode={setViewMode} />
+    <div className="homeDiv">
       <div>
         <PricingFormTan setViewMode={setViewMode} setResult={setResult} />
       </div>

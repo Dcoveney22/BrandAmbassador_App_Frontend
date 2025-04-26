@@ -40,48 +40,49 @@ function MarketingCard({
   Total,
 }: MarketingProps) {
   return (
-    <div className="marketingCard">
-      <div className="insideDiv">
-        <img
-          className="marketingProfilePhoto"
-          src={`${Brand}_logo.jpg`}
-          alt=""
-        />
-        <p>
-          <p className="brandTitle">
-            <u>{Brand}</u>
+    <div className="homeDiv">
+      <div className="marketingCard">
+        <div className="insideDiv">
+          <img
+            className="marketingProfilePhoto"
+            src={`${Brand}_logo.jpg`}
+            alt=""
+          />
+          <p>
+            <p className="brandTitle">
+              <u>{Brand}</u>
+            </p>
+            <div className="brandSpace"></div>
+            <div>
+              <p className="miniTitle">COMMUNICATE</p>
+              <div className="budgetItems">
+                <li>Trade Shows: £{Trade_Shows}</li>
+                <li>Consumer Shows: £{Consumer_Shows}</li>
+                <li>Digital Marketing: £{Digital_Marketing}</li>
+                <li>Photography: £{Photography}</li>
+                <li>PR: £{PR}</li>
+              </div>
+              <p className="miniTitle">CONSUME</p>
+              <div className="budgetItems">
+                <li>Wholesale Activations: £{Wholesale_Activations}</li>
+                <li>Retail Activations: £{Retail_Activations}</li>
+                <li>Other Retail Activations: £{Other_Retail_Activations}</li>
+                <li>Amazon Marketing: £{Amazon_Marketing}</li>
+                <li>POS_Budget: £{POS_Budget}</li>
+              </div>
+              <p className="miniTitle">CONVERT (On-Trade)</p>
+              <div className="budgetItems">
+                <li>Activations: £{On_Trade_Activations}</li>
+                <li>Listing Fee: £{On_Trade_Listing_Fee}</li>
+                <li>Staff Incentives: £{On_Trade_Staff_Incentives}</li>
+                <li>Entertainment: £{On_Trade_Entertainment}</li>
+                <li>Incidentals: £{Incidentals}</li>
+                <p className="totals">TOTALS £{Total}</p>
+              </div>
+            </div>
           </p>
-          <div className="brandSpace"></div>
-          <div>
-            <p className="miniTitle">COMMUNICATE</p>
-            <div className="budgetItems">
-              <li>Trade Shows: £{Trade_Shows}</li>
-              <li>Consumer Shows: £{Consumer_Shows}</li>
-              <li>Digital Marketing: £{Digital_Marketing}</li>
-              <li>Photography: £{Photography}</li>
-              <li>PR: £{PR}</li>
-            </div>
-            <p className="miniTitle">CONSUME</p>
-            <div className="budgetItems">
-              <li>Wholesale Activations: £{Wholesale_Activations}</li>
-              <li>Retail Activations: £{Retail_Activations}</li>
-              <li>Other Retail Activations: £{Other_Retail_Activations}</li>
-              <li>Amazon Marketing: £{Amazon_Marketing}</li>
-              <li>POS_Budget: £{POS_Budget}</li>
-            </div>
-            <p className="miniTitle">CONVERT (On-Trade)</p>
-            <div className="budgetItems">
-              <li>Activations: £{On_Trade_Activations}</li>
-              <li>Listing Fee: £{On_Trade_Listing_Fee}</li>
-              <li>Staff Incentives: £{On_Trade_Staff_Incentives}</li>
-              <li>Entertainment: £{On_Trade_Entertainment}</li>
-              <li>Incidentals: £{Incidentals}</li>
-              <p className="totals">TOTALS £{Total}</p>
-            </div>
-          </div>
-        </p>
+        </div>
       </div>
-
       {/* <ViewMarketingBudget /> */}
     </div>
   );
