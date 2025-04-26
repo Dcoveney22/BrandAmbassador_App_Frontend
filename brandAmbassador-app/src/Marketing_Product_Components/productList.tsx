@@ -27,13 +27,6 @@ function ProductList({ setViewMode }: ProductListProps) {
     queryFn: getProducts,
   });
 
-  // const [viewing, setViewing] = useState(false);
-  // const viewProducts = () => {
-  //   setViewing(true);
-  // };
-  // const stopViewing = () => {
-  //   setViewing(false);
-  // };
   if (isLoading) return <Loader />;
 
   console.log(data);

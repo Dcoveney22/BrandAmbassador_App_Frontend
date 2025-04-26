@@ -9,6 +9,8 @@ import PricingTreeCard from "./PricingTreeCard";
 import PricingFormTan from "./PricingFormTan";
 import formValueProcessing from "../Functions/formValueProcessing";
 import { PricingTreeSKU } from "../Functions/functionTypes";
+import { PriceListIcon } from "../icons/PriceListIcon";
+import { SavedButtonIcon } from "../icons/SavedProductIcon";
 
 export type BrandSKU = {
   Brand: string;
@@ -53,6 +55,16 @@ function GeneratePricing({ setViewMode, setResult }: GeneratePricingProps) {
           />
         ))}
       </div> */}
+      <div
+        className="card"
+        onClick={() => {
+          setViewMode(ViewMode.SavedPriceProducts);
+        }}
+      >
+        <SavedButtonIcon id="priceListIcon" />
+
+        <p className="homeTitle">VIEW SAVED PRODUCTS</p>
+      </div>
     </div>
   );
 }

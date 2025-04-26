@@ -16,7 +16,7 @@
   --pp-box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   --pp-box-shadow-light: rgba(0, 0, 0, 0.24) 0rem 0.3rem 0.4rem;
 
-  background-color: black;
+  background-color: burlywood;
 
   color: white;
   text-align: center;
@@ -65,9 +65,11 @@
 
 .card {
   padding: 2em;
-  display: inline-block;
+  display: flex;
   color: aliceblue;
   background-color: darkcyan;
+  justify-content: center;
+  align-items: center;
 }
 .productCard {
   background-color: darkcyan;
@@ -94,7 +96,6 @@
 
 .productFormCard {
   margin: 10px;
-  margin-bottom: 100px;
   line-height: 60px;
   text-align: center;
   display: inline-block;
@@ -102,7 +103,7 @@
   grid-template-columns: 1fr;
   row-gap: 1rem;
   background-color: darkcyan;
-  width: 400px;
+  width: auto;
   height: 600px;
   border-radius: 2.4rem;
   box-shadow: var(--pp-box-shadow);
@@ -129,6 +130,9 @@
   .marketingCard {
     width: auto;
     display: flex;
+  }
+  .marketingCard img {
+    display: none;
   }
 }
 @media only screen and (min-width: 600px) {

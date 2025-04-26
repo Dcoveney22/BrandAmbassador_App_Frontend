@@ -1,9 +1,9 @@
 #homeButton {
-  color: blue;
+  color: white;
   top: 5rem;
 }
-#homeButton.hover {
-  color: blueviolet;
+#homeButton:hover {
+  color: black;
 }
 #resetButton {
   top: 10rem;
@@ -28,4 +28,11 @@
   color: var(--pp-dark-green);
   display: flex;
   justify-content: space-between;
+}
+#priceListIcon {
+  color: black;
+}
+
+#priceListIcon:hover {
+  color: black;
 }

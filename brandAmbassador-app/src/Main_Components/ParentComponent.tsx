@@ -7,6 +7,7 @@ import ResultsDisplay from "../Price_Tree_Component/ResultsDisplay";
 import { PricingTreeSKU } from "../Functions/functionTypes";
 import HeaderCopy from "./Header_copy";
 import { PageContext, useContextAndErrorIfNull } from "../Contexts/Context";
+import SavedProductList from "../Marketing_Product_Components/savedPriceProducts";
 
 export enum ViewMode {
   HomePage,
@@ -14,6 +15,7 @@ export enum ViewMode {
   ProductList,
   PriceTree,
   ResultsDisplay,
+  SavedPriceProducts,
 }
 
 function ParentComponent() {
@@ -30,6 +32,10 @@ function ParentComponent() {
 
   if (viewMode === ViewMode.ProductList) {
     return <ProductList setViewMode={setViewMode} />;
+  }
+
+  if (viewMode === ViewMode.SavedPriceProducts) {
+    return <SavedProductList setViewMode={setViewMode} />;
   }
 
   if (viewMode === ViewMode.PriceTree) {
