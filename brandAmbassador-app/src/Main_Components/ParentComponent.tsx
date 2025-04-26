@@ -6,6 +6,7 @@ import GeneratePricing from "../Price_Tree_Component/generatePricing";
 import ResultsDisplay from "../Price_Tree_Component/ResultsDisplay";
 import { PricingTreeSKU } from "../Functions/functionTypes";
 import HeaderCopy from "./Header_copy";
+import { PageContext, useContextAndErrorIfNull } from "../Contexts/Context";
 
 export enum ViewMode {
   HomePage,
@@ -17,11 +18,10 @@ export enum ViewMode {
 
 function ParentComponent() {
   const [result, setResult] = useState<PricingTreeSKU | null>(null);
-  // const [foo, setFoo] = useState("foo");
-  const [viewMode, setViewMode] = useState<ViewMode>(ViewMode.HomePage);
-  //   const [selectedPage, setSelectedPage] = useState<number>(0);
+  const { viewMode, setViewMode } = useContextAndErrorIfNull(PageContext);
+
   if (viewMode === ViewMode.HomePage) {
-    return <HomePage setViewMode={setViewMode} />;
+    return <HomePage />;
   }
 
   if (viewMode === ViewMode.MarketingList) {

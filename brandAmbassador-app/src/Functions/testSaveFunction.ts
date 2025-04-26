@@ -14,7 +14,7 @@ const testSendData: PricingTreeSKU = {
 function sendSaveData() {
   fetch("http://localhost:3000/priceTreeData", {
     method: "POST",
-    body: JSON.stringify({ testSendData }),
+    body: JSON.stringify(testSendData),
     headers: { "Content-Type": "application/json; charset=UTF-8" },
   });
 }

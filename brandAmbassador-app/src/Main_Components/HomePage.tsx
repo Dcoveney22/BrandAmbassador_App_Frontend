@@ -5,14 +5,16 @@ import MarketingList from "../Marketing_Product_Components/MarketingList";
 import { ViewMode } from "../Main_Components/ParentComponent";
 import ProductList from "../Marketing_Product_Components/productList";
 import Header from "./Header";
+import { PageContext, useContextAndErrorIfNull } from "../Contexts/Context";
 
 type HomePageProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
-function HomePage({ setViewMode }: HomePageProps) {
+function HomePage() {
+  const { setViewMode } = useContextAndErrorIfNull(PageContext);
   return (
-    <div>
+    <div className="homDiv">
       {/* <Header setViewMode={setViewMode} /> */}
       <div className="card">
         <img

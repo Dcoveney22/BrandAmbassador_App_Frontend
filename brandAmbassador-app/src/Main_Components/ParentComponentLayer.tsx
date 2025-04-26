@@ -1,11 +1,13 @@
+import { PageContext, useContextAndErrorIfNull } from "../Contexts/Context";
 import Layout from "./Layout";
 import ParentComponent from "./ParentComponent";
 
-const ParentComponentLayer = () => {
+export function ParentComponentLayer() {
   return (
     <Layout>
       <ParentComponent />
     </Layout>
   );
-};
-export default ParentComponentLayer;
+}
+
+//Use context hook
