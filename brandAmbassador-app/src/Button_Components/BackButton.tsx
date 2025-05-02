@@ -10,6 +10,6 @@ function BackButton({ setViewMode }: BackButtonProps) {
     setViewMode(ViewMode.PriceTree);
   };
 
-  return <ResetIcon id="resetButton" onClick={onButtonClick} />;
+  return <ResetIcon id="backButton" onClick={onButtonClick} />;
 }
 export default BackButton;

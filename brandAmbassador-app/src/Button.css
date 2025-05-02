@@ -5,9 +5,9 @@
 #homeButton:hover {
   color: black;
 }
-#resetButton {
+#backButton {
   top: 10rem;
-  color: blue;
+  color: white;
   display: flexbox;
   margin-right: auto;
   margin-left: auto;
@@ -15,15 +15,22 @@
 
 #saveButton {
   top: 10rem;
-  color: blue;
+  color: white;
   display: flexbox;
   justify-content: center;
   margin-right: auto;
   margin-left: auto;
 }
+#saveButton:hover {
+  color: black;
+}
+#backButton:hover {
+  color: black;
+}
 
 #resultsButtonContainer {
-  background-color: #d8e7d0;
+  background-color: darkcyan;
+  border-radius: 2em;
   padding: 10px 20px;
   color: var(--pp-dark-green);
   display: flex;

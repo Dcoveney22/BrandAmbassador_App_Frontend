@@ -5,6 +5,8 @@ import { PricingTreeSKU } from "../Functions/functionTypes";
 import BackButton from "../Button_Components/BackButton";
 import SaveButton from "../Button_Components/SaveButton";
 import sendSaveData from "../Functions/testSaveFunction";
+import submittedCard from "./submittedCard";
+import SubmittedCard from "./submittedCard";
 
 export type priceSKU = {
   Brand: string;
@@ -13,44 +15,22 @@ export type priceSKU = {
   ABV: number;
   RRP: number;
 };
-type ResultsDisplayProps = {
-  result: PricingTreeSKU;
+type SubmittedDisplayProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
 };
 
-const testSendData: PricingTreeSKU = {
-  Brand: "testBrand",
-  SKU: "testSKU",
-  CL: 70,
-  ABV: 45,
-  RRP: 22.56,
-  Duty: 4,
-  Import_Origin: "testImport",
-  Ex_Works: 12.0,
-};
-
-function ResultsDisplay({ result, setViewMode }: ResultsDisplayProps) {
+function SubmittedDisplay({ setViewMode }: SubmittedDisplayProps) {
   //   console.log(data)
 
   return (
     <div className="homeDiv">
       <div>
-        <PricingTreeCard
-          Brand={result.Brand}
-          SKU={result.SKU}
-          CL={result.CL}
-          ABV={result.ABV}
-          Import_Origin={result.Import_Origin}
-          Ex_Works={result.Ex_Works}
-          RRP={result.RRP}
-          Duty={result.Duty}
-        />
+        <SubmittedCard />
       </div>
       <div id="resultsButtonContainer">
         <BackButton setViewMode={setViewMode} />
-        <SaveButton setViewMode={setViewMode} result={result} />
       </div>
     </div>
   );
 }
-export default ResultsDisplay;
+export default SubmittedDisplay;

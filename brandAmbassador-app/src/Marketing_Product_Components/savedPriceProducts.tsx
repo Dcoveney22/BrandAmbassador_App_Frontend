@@ -8,6 +8,7 @@ import Header from "../Main_Components/Header";
 import Loader from "../Main_Components/loader";
 import { getSavedPrices } from "../Functions/getSavedPrices";
 import SavedProductCard, { SavedProductProps } from "./SavedPriceCard";
+import BackButton from "../Button_Components/BackButton";
 
 export type BrandSKU = {
   Brand: string;
@@ -50,7 +51,9 @@ function SavedProductList({ setViewMode }: ProductListProps) {
           />
         ))}
       </div>
-      {/* )} */}
+      <div id="resultsButtonContainer">
+        <BackButton setViewMode={setViewMode} />
+      </div>
     </div>
   );
 }

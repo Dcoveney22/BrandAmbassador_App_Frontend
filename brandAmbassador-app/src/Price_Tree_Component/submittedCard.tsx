@@ -24,30 +24,14 @@ type PricingProps = {
   RRP: number;
 };
 
-function PricingTreeCard({
-  Brand,
-  SKU,
-  CL,
-  ABV,
-  Import_Origin,
-  Ex_Works,
-  Duty,
-  RRP,
-}: PricingTreeSKU) {
+function SubmittedCard() {
   return (
     <div className="productCard">
       <div className="insideDiv">
         <p className="label">
-          <p className="brandTitle">{Brand}</p>
-          <p className="miniTitle">SKU: {SKU}</p>
+          <p className="brandTitle">THANK YOU FOR SUBMITTING</p>
           <p className="budgetItems">
-            <li>Brand: {Brand}</li>
-            <li>Import Origin: {Import_Origin}</li>
-            <li>Ex-Works: {Ex_Works}</li>
-            <li>Duty: {Duty}</li>
-            <li>Size(cl): {CL}</li>
-            <li>ABV(%): {ABV}</li>
-            <li>RRP: £{RRP}</li>
+            <li>The product has been stored</li>
           </p>
         </p>
       </div>
@@ -55,4 +39,4 @@ function PricingTreeCard({
   );
 }
 
-export default PricingTreeCard;
+export default SubmittedCard;
