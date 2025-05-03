@@ -1,5 +1,3 @@
-import { BrandSKU } from "../Price_Tree_Component/generatePricing";
-
 export class FormDataSKU {
   Brand: string;
   SKU: string;
@@ -25,7 +23,6 @@ export class FormDataSKU {
   }
 }
 
-// Pricing
 export class PricingTreeSKU extends FormDataSKU {
   Duty: number;
   RRP: number;

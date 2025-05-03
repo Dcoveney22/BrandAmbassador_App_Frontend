@@ -1,11 +1,6 @@
 import { ViewMode } from "../Main_Components/ParentComponent";
-import Header from "../Main_Components/Header";
-import PricingTreeCard from "./PricingTreeCard";
-import { PricingTreeSKU } from "../Functions/functionTypes";
+
 import BackButton from "../Button_Components/BackButton";
-import SaveButton from "../Button_Components/SaveButton";
-import sendSaveData from "../Functions/testSaveFunction";
-import submittedCard from "./submittedCard";
 import SubmittedCard from "./submittedCard";
 
 export type priceSKU = {

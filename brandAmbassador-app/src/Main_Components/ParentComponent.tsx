@@ -5,7 +5,6 @@ import ProductList from "../Marketing_Product_Components/productList";
 import GeneratePricing from "../Price_Tree_Component/generatePricing";
 import ResultsDisplay from "../Price_Tree_Component/ResultsDisplay";
 import { PricingTreeSKU } from "../Functions/functionTypes";
-import HeaderCopy from "./Header_copy";
 import { PageContext, useContextAndErrorIfNull } from "../Contexts/Context";
 import SavedProductList from "../Marketing_Product_Components/savedPriceProducts";
 import SubmittedDisplay from "../Price_Tree_Component/SubmittedDisplay";

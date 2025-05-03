@@ -1,5 +1,4 @@
 import { HomeIcon } from "../icons/HomeIcon";
-import Button from "../Marketing_Product_Components/Button";
 import { ViewMode } from "../Main_Components/ParentComponent";
 
 type HomePageButtonProps = {

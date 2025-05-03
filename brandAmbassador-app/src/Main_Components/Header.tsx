@@ -1,6 +1,5 @@
 import HomePageButton from "../Button_Components/HomePageButton";
 import { PageContext, useContextAndErrorIfNull } from "../Contexts/Context";
-import { ViewMode } from "../Main_Components/ParentComponent";
 
 function Header() {
   const { setViewMode } = useContextAndErrorIfNull(PageContext);

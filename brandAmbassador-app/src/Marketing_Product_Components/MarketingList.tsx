@@ -1,11 +1,7 @@
 import { getMarketing } from "../Functions/getMarketing";
 import { useQuery } from "@tanstack/react-query";
 import MarketingCard from "./MarketingCard";
-import Button from "./Button";
-import { useState } from "react";
 import { ViewMode } from "../Main_Components/ParentComponent";
-import HomePageButton from "../Button_Components/HomePageButton";
-import Header from "../Main_Components/Header";
 import Loader from "../Main_Components/loader";
 
 export type MarketingBudget = {

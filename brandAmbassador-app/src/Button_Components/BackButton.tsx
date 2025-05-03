@@ -1,4 +1,3 @@
-import { HomeIcon } from "../icons/HomeIcon";
 import { ViewMode } from "../Main_Components/ParentComponent";
 import { ResetIcon } from "../icons/ResetIcon";
 

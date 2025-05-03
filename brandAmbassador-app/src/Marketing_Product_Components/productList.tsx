@@ -1,10 +1,7 @@
 import { getProducts } from "../Functions/getProducts";
 import { useQuery } from "@tanstack/react-query";
 import ProductCard from "./ProductCard";
-import Button from "./Button";
-import { useState } from "react";
 import { ViewMode } from "../Main_Components/ParentComponent";
-import Header from "../Main_Components/Header";
 import Loader from "../Main_Components/loader";
 
 export type BrandSKU = {

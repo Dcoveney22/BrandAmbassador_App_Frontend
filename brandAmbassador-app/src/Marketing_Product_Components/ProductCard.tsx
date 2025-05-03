@@ -1,17 +1,5 @@
 import "../App.css";
 
-// type BrandSKU = {
-//   Brand: string;
-//   SKU: string;
-//   CL: number;
-//   ABV: number;
-//   Ex_Works: number;
-//   Wholesale: number;
-//   On_Trade: number;
-//   RRP: number;
-//   Product_Code: string;
-// };
-
 type ProductProps = {
   Brand: string;
   SKU: string;

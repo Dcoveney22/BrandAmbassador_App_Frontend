@@ -1,10 +1,8 @@
 import { ViewMode } from "../Main_Components/ParentComponent";
-import Header from "../Main_Components/Header";
 import PricingTreeCard from "./PricingTreeCard";
 import { PricingTreeSKU } from "../Functions/functionTypes";
 import BackButton from "../Button_Components/BackButton";
 import SaveButton from "../Button_Components/SaveButton";
-import sendSaveData from "../Functions/testSaveFunction";
 
 export type priceSKU = {
   Brand: string;
@@ -16,17 +14,6 @@ export type priceSKU = {
 type ResultsDisplayProps = {
   result: PricingTreeSKU;
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
-};
-
-const testSendData: PricingTreeSKU = {
-  Brand: "testBrand",
-  SKU: "testSKU",
-  CL: 70,
-  ABV: 45,
-  RRP: 22.56,
-  Duty: 4,
-  Import_Origin: "testImport",
-  Ex_Works: 12.0,
 };
 
 function ResultsDisplay({ result, setViewMode }: ResultsDisplayProps) {

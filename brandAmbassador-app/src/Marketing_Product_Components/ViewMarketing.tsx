@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Button from "./Button";
 import MarketingList from "./MarketingList";
-import MarketingCard from "./MarketingCard";
 
 function ViewMarketingBudget() {
   const [showData, setShowData] = useState(false);

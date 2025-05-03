@@ -1,4 +1,3 @@
-import { BrandSKU } from "../Price_Tree_Component/generatePricing";
 import { FormDataSKU, PricingTreeSKU } from "./functionTypes";
 const goodsIn = 0.16;
 const warehouseRent = 0.36;
@@ -9,7 +8,6 @@ const africasShipping = 2.5;
 const oceanaShipping = 3.0;
 
 export async function formValueProcessing(formResult: PricingTreeSKU) {
-  const newArray = [];
   const setCosts = goodsIn + warehouseRent + deliveryCost;
   let importCost = 0;
   let duty = 0;

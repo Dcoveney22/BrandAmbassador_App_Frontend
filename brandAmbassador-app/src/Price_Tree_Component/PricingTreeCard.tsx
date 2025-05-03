@@ -1,18 +1,6 @@
 import "../App.css";
 import { PricingTreeSKU } from "../Functions/functionTypes";
 
-// type BrandSKU = {
-//   Brand: string;
-//   SKU: string;
-//   CL: number;
-//   ABV: number;
-//   Ex_Works: number;
-//   Wholesale: number;
-//   On_Trade: number;
-//   RRP: number;
-//   Product_Code: string;
-// };
-
 type PricingProps = {
   Brand: string;
   SKU: string;

@@ -1,15 +1,9 @@
 import { getProducts } from "../Functions/getProducts";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 import { ViewMode } from "../Main_Components/ParentComponent";
-import Header from "../Main_Components/Header";
 import Loader from "../Main_Components/loader";
-import PricingTreeCard from "./PricingTreeCard";
-
 import PricingFormTan from "./PricingFormTan";
-import formValueProcessing from "../Functions/formValueProcessing";
 import { PricingTreeSKU } from "../Functions/functionTypes";
-import { PriceListIcon } from "../icons/PriceListIcon";
 import { SavedButtonIcon } from "../icons/SavedProductIcon";
 
 export type BrandSKU = {
@@ -43,18 +37,7 @@ function GeneratePricing({ setViewMode, setResult }: GeneratePricingProps) {
       <div>
         <PricingFormTan setViewMode={setViewMode} setResult={setResult} />
       </div>
-      {/* 
-      <div>
-        {data.map((product: BrandSKU) => (
-          <PricingTreeCard
-            Brand={product.Brand}
-            SKU={product.SKU}
-            CL={product.CL}
-            ABV={product.ABV}
-            Ex_Works={product.Ex_Works}
-          />
-        ))}
-      </div> */}
+
       <div
         className="card"
         onClick={() => {

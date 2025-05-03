@@ -1,11 +1,6 @@
 import { Context, createContext, useContext } from "react";
 import { ViewMode } from "../Main_Components/ParentComponent";
 
-// export type UserInfo = {
-//   username: string;
-//   token: string;
-// };
-
 // this is a hook
 type PageContextType = {
   viewMode: ViewMode | null;
