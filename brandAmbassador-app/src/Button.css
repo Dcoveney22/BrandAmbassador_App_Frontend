@@ -1,6 +1,6 @@
 #homeButton {
   color: white;
-  top: 5rem;
+  /* vertical-align: baseline; */
 }
 #homeButton:hover {
   color: black;

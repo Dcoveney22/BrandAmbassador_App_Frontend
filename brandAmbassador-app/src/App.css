@@ -31,15 +31,20 @@
   will-change: filter;
   transition: filter 300ms;
 }
+#logoHeader {
+  height: 4em;
+}
 .header {
   background-color: darkcyan;
   border-radius: 2em;
   top: 20px;
   padding: 10px 20px;
   color: var(--pp-dark-green);
-  display: flex;
-  justify-content: space-between;
-  align-items: left;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 700px;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -65,7 +70,7 @@
 
 .card {
   padding: 2em;
-  display: flex;
+  /* display: flex; */
   color: aliceblue;
   background-color: darkcyan;
   justify-content: center;
@@ -116,6 +121,11 @@
   height: 500px;
 }
 @media only screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: left;
+    width: auto;
+  }
   .card {
     width: auto;
     display: block;

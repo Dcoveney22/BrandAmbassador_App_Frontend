@@ -1,17 +1,6 @@
 import { PricingTreeSKU } from "./functionTypes";
 
-const testSendData: PricingTreeSKU = {
-  Brand: "testBrand",
-  SKU: "testSKU",
-  CL: 70,
-  ABV: 45,
-  Import_Origin: "testImport",
-  Ex_Works: 12.0,
-  Duty: 4,
-  RRP: 22.56,
-};
-
-function sendSaveData(data) {
+function sendSaveData(data: PricingTreeSKU) {
   fetch("http://localhost:3000/priceTreeData", {
     method: "POST",
     body: JSON.stringify(data),

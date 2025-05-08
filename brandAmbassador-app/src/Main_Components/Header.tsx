@@ -9,6 +9,7 @@ function Header() {
     <header className="header">
       <div>
         <HomePageButton setViewMode={setViewMode} />
+        <img id="logoHeader" src="salesDockLogo.png" alt="" />
       </div>
     </header>
   );

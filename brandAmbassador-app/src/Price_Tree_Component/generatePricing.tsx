@@ -22,16 +22,6 @@ type GeneratePricingProps = {
   setResult: React.Dispatch<React.SetStateAction<PricingTreeSKU | null>>;
 };
 function GeneratePricing({ setViewMode, setResult }: GeneratePricingProps) {
-  const { data, isLoading } = useQuery({
-    queryKey: [`products`],
-    queryFn: getProducts,
-  });
-  // await formValueProcessing;
-
-  if (isLoading) return <Loader />;
-
-  //   console.log(data)
-
   return (
     <div className="homeDiv">
       <div>
