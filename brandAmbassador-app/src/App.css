@@ -16,7 +16,7 @@
   --pp-box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   --pp-box-shadow-light: rgba(0, 0, 0, 0.24) 0rem 0.3rem 0.4rem;
 
-  background-color: burlywood;
+  background-color: lightslategrey;
 
   color: white;
   text-align: center;
@@ -32,16 +32,17 @@
   transition: filter 300ms;
 }
 #logoHeader {
-  height: 4em;
+  height: 5em;
+  margin-top: 10px;
 }
 .header {
-  background-color: darkcyan;
+  background-color: lightslategray;
   border-radius: 2em;
   top: 20px;
   padding: 10px 20px;
   color: var(--pp-dark-green);
   display: inline-block;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   width: 700px;
@@ -72,21 +73,21 @@
   padding: 2em;
   /* display: flex; */
   color: aliceblue;
-  background-color: darkcyan;
+  background-color: midnightblue;
   justify-content: center;
   align-items: center;
 }
 .productCard {
-  background-color: darkcyan;
+  background-color: midnightblue;
 }
 .marketingCard {
-  background-color: darkcyan;
+  background-color: midnightblue;
 }
 .card:hover {
-  background-color: rgb(178, 211, 203);
-  color: black;
-  box-shadow: 10px 5px 5px black;
-  text-shadow: 5px 2.5px 2.5px whitesmoke;
+  background-color: black;
+  color: white;
+  box-shadow: 10px 5px 5px whitesmoke;
+  text-shadow: 5px 2.5px 2.5px midnightblue;
 }
 
 .read-the-docs {
@@ -107,7 +108,7 @@
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   row-gap: 1rem;
-  background-color: darkcyan;
+  background-color: midnightblue;
   width: auto;
   height: 600px;
   border-radius: 2.4rem;
@@ -120,7 +121,7 @@
 .bigSpace {
   height: 500px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .header {
     display: flex;
     justify-content: left;
@@ -149,8 +150,19 @@
     padding: 2rem;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .card {
     width: 300px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #homeButton {
+    margin-top: 10px;
+    float: none;
+  }
+  .header {
+    display: flex;
+    justify-content: left;
+    width: auto;
   }
 }

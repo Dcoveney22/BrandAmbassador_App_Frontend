@@ -1,5 +1,7 @@
 #homeButton {
+  margin-top: 20px;
   color: white;
+  float: left;
   /* vertical-align: baseline; */
 }
 #homeButton:hover {
