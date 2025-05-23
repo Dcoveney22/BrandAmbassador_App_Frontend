@@ -17,6 +17,7 @@ export enum ViewMode {
   ResultsDisplay,
   SavedPriceProducts,
   SubmittedDisplay,
+  PriceTreeCompleted,
 }
 
 function ParentComponent() {
@@ -42,6 +43,11 @@ function ParentComponent() {
   if (viewMode === ViewMode.PriceTree) {
     return <GeneratePricing setViewMode={setViewMode} setResult={setResult} />;
   }
+
+  if (viewMode === ViewMode.PriceTreeCompleted) {
+    return <GeneratePricing setViewMode={setViewMode} setResult={setResult} />;
+  }
+
   if (viewMode === ViewMode.ResultsDisplay && result !== null) {
     return <ResultsDisplay setViewMode={setViewMode} result={result} />;
   }

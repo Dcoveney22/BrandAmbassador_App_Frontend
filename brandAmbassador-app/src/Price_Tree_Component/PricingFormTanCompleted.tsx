@@ -2,10 +2,12 @@ import { useForm } from "@tanstack/react-form";
 import { ViewMode } from "../Main_Components/ParentComponent";
 import formValueProcessing from "../Functions/formValueProcessing";
 import { PricingTreeSKU } from "../Functions/functionTypes";
+import { value } from "./PricingFormTan";
 
-type PricingFormTanProps = {
+type PricingFormTanCompletedProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
   setResult: React.Dispatch<React.SetStateAction<PricingTreeSKU | null>>;
+  result: PricingTreeSKU;
 };
 
 interface PricingFormValues {
@@ -16,7 +18,10 @@ interface PricingFormValues {
   Import_Origin: string;
   Ex_Works: number;
 }
-function PricingFormTan({ setViewMode, setResult }: PricingFormTanProps) {
+async function PricingFormTanCompleted({
+  setViewMode,
+  setResult,
+}: PricingFormTanCompletedProps) {
   // const pricingFormTan: React.FC = () => {
   const form = useForm({
     defaultValues: {
@@ -196,4 +201,4 @@ function PricingFormTan({ setViewMode, setResult }: PricingFormTanProps) {
 }
 // }
 
-export default PricingFormTan;
+export default PricingFormTanCompleted;

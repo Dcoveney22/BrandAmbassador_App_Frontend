@@ -75,25 +75,25 @@ When building this app I wanted to create something which would ensure the follo
   - By clicking the price list button, the app makes a request to the Supabase Database, returning the data requested
   - Each line from the table within the Supabase Database is displayed on an individual "card" also drawing the correct imange for the SKU from the "PUBLIC" file within the program.
 
-  **Marketing Budgets**
+- **Marketing Budgets**
 
-  - This product works in the same way as the "Price Lists" section but requests and displays different information.
+- This product works in the same way as the "Price Lists" section but requests and displays different information.
 
-  **Value Chain**
+- **Value Chain**
 
-  - Rather than aoutomatically sending a request to the database, this section loads a form for the user to input information.
-  - This is a Tanstack Form with a number of inputs.
-    - 2 x string inputs
-    - 2 x number inputs
-    - 1 x dropdown option input
-  - When this form is submitted the inputs are sent through a function which processes the information and outputs the following information:
-    - Works out what Duty will needed to be added to the cost of each bottle
-    - Asks which drop down coice was chosed for the Import Origin, each Import Origin carries it's own average cost for import so the function adds that on depending on the choice.
-    - To then work out the RRP the function adds the retailer margin to offer guidance on the RRP.
-  - This information is then displayed to the user in a new state, with two other options:
-    - Go back _(this takes the user back to an empty form to start again)_
-    - Save Product (This saves the product to a different Supabase Database, ready to be used again in the future)
-  - Returning to the form page the user will find another button which will send a request to the Value Chain database and once pressed will show each saved product in a similar way to the Price List part of the app. Each product will be shown on its own card for easy readability.
+- Rather than aoutomatically sending a request to the database, this section loads a form for the user to input information.
+- This is a Tanstack Form with a number of inputs.
+  - 2 x string inputs
+  - 2 x number inputs
+  - 1 x dropdown option input
+- When this form is submitted the inputs are sent through a function which processes the information and outputs the following information:
+  - Works out what Duty will needed to be added to the cost of each bottle
+  - Asks which drop down coice was chosed for the Import Origin, each Import Origin carries it's own average cost for import so the function adds that on depending on the choice.
+  - To then work out the RRP the function adds the retailer margin to offer guidance on the RRP.
+- This information is then displayed to the user in a new state, with two other options:
+  - Go back _(this takes the user back to an empty form to start again)_
+  - Save Product (This saves the product to a different Supabase Database, ready to be used again in the future)
+- Returning to the form page the user will find another button which will send a request to the Value Chain database and once pressed will show each saved product in a similar way to the Price List part of the app. Each product will be shown on its own card for easy readability.
 
 ## Future developments
 
