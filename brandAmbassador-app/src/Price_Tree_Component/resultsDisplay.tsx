@@ -3,8 +3,6 @@ import PricingTreeCard from "./PricingTreeCard";
 import { PricingTreeSKU } from "../Functions/functionTypes";
 import BackButton from "../Button_Components/BackButton";
 import SaveButton from "../Button_Components/SaveButton";
-import CompareIcon from "../icons/CompareIcon";
-import CompareButton from "../Button_Components/CompareButton";
 
 export type priceSKU = {
   Brand: string;
