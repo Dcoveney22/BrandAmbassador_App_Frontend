@@ -6,7 +6,6 @@ import sendSaveData from "../Functions/testSaveFunction";
 type SaveButtonProps = {
   setViewMode: React.Dispatch<React.SetStateAction<ViewMode>>;
   result: PricingTreeSKU;
-  issue: String;
 };
 
 function SaveButton({ result, setViewMode }: SaveButtonProps) {
@@ -14,7 +13,7 @@ function SaveButton({ result, setViewMode }: SaveButtonProps) {
     const response = await sendSaveData(result);
     const error = await response.json();
     // return value from testSaveFunction - handle if error - async/await
-    error.issues.forEach((issue) => {
+    error.issues.forEach((issue: { message: any }) => {
       alert(issue.message);
     });
 
